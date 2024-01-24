@@ -1,12 +1,13 @@
 package com.marvel.microservicio.controller;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.marvel.microservicio.model.Personaje;
+import com.marvel.microservicio.model.Bitacora;
 import com.marvel.microservicio.service.PersonajeService;
 
 @RestController
@@ -26,8 +27,13 @@ public class PersonajeController {
 	
 	//Para poder exponer el metodo y obtener objeto recibiendo un parametro del cliente a traves de la URL
 	@GetMapping("{id}")
-	public Personaje getCharacterById(@PathVariable("id") Long id) {
+	public Object getCharacterById(@PathVariable("id") Long id) {
 		return userService.getCharacterById(id);
+	}
+	
+	@GetMapping("/bitacora")
+	public List<Bitacora> getBitacora() {
+		return userService.getBitacora();
 	}
 
 }
