@@ -1,12 +1,20 @@
 package com.marvel.microservicio.utils;
 
 import java.util.Date;
-
 import org.springframework.web.client.RestClient;
 import com.marvel.microservicio.model.Bitacora;
 
+/**
+ * Clase de utilerias 
+ */
 public class Utils {
 	
+	/**
+	 * Metodo que ejecuta el servicio del JAR
+	 * @param tipoOperacion tipo de operacion
+	 * @param id id del personaje
+	 * @return Objecto con los personajes
+	 */
 	public Object ejecutaCliente(int tipoOperacion, Long id) {	
 		RestClient restClient = RestClient.create();
 		Object objetoRespuesta = new Object();
@@ -26,6 +34,11 @@ public class Utils {
 		return objetoRespuesta;
 	}
 	
+	/**
+	 * Metodo que arma el bean de bitacora
+	 * @param tipoOperacion tipo de operacion
+	 * @return bean de bitacora
+	 */
 	public Bitacora objetoBitacora(int tipoOperacion) {
 		Bitacora registroBitacora = new Bitacora();
 		Date fecha = new Date();

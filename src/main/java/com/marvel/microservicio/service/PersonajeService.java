@@ -1,14 +1,26 @@
 package com.marvel.microservicio.service;
 
-import java.util.List;
-import com.marvel.microservicio.model.Bitacora;
-
+/**
+ * Interfaz 
+ */
 public interface PersonajeService {
 	
+	/**
+	 * Metodo para obtener todos los personajes
+	 * @return Object con todos los personajes
+	 */
 	public Object getAllCharacters();
 	
+	/**
+	 * Metodo para obtener personaje por id
+	 * @param id id del personaje
+	 */
 	public Object getCharacterById(Long id);
 	
-	public List<Bitacora> getBitacora();
+	/**
+	 * Metodo para obtener todos los registros de bitacora
+	 * @return Object con los registros de bitacora
+	 */
+	public Object getBitacora();
 
 }
