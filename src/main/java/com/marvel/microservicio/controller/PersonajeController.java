@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.marvel.microservicio.model.AuthenticationReq;
 import com.marvel.microservicio.model.TokenInfo;
+import com.marvel.microservicio.service.BitacoraService;
 import com.marvel.microservicio.service.PersonajeService;
 import com.marvel.microservicio.service.impl.JwtUtilService;
 
@@ -56,6 +57,12 @@ public class PersonajeController {
 	 */
 	@Autowired 
 	private PersonajeService userService;
+	
+	/**
+	 * Inyeccion de dependencia bitacoraService
+	 */
+	@Autowired
+	private BitacoraService bitacoraService;
 	
 	/**
 	 * Metodo para generer el JWT
@@ -103,7 +110,7 @@ public class PersonajeController {
 	@GetMapping("/bitacora")
 	public Object getBitacora() {
 		LOG.info("Ingresa al metodo getBitacora de la clase PersonajeController.");
-		return userService.getBitacora();
+		return bitacoraService.getBitacora();
 	}
 
 }
