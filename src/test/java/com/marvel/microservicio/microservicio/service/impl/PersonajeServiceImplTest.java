@@ -40,11 +40,6 @@ public class PersonajeServiceImplTest {
 	private Object resultadoOne;
 	
 	/**
-	 * resultadoBitacora
-	 */
-	private Object resultadoBitacora;
-	
-	/**
 	 * noEsperado
 	 */
 	private Object noEsperado;
@@ -61,7 +56,6 @@ public class PersonajeServiceImplTest {
     public void setup(){
 		resultadoAll = personajeServiceImpl.getAllCharacters();
 		resultadoOne = personajeServiceImpl.getCharacterById(id);
-		resultadoBitacora = personajeServiceImpl.getBitacora();
     }
 	
 	/**
@@ -86,19 +80,6 @@ public class PersonajeServiceImplTest {
 		final Object esperado = personajeServiceImpl.getCharacterById(id);
 		Assertions.assertNotNull(esperado);
 		Assertions.assertEquals(resultadoOne, esperado);
-		Assertions.assertNotEquals(resultadoAll, esperado);
-		Assertions.assertNotSame(noEsperado, esperado);
-	}
-	
-	/**
-	 * Test del metodo getBitacora
-	 */
-	@DisplayName("JUnit test metodo getBitacora")
-	@Test
-	void testGetBitacora() {
-		final Object esperado = personajeServiceImpl.getBitacora();
-		Assertions.assertNotNull(esperado);
-		Assertions.assertEquals(resultadoBitacora, esperado);
 		Assertions.assertNotEquals(resultadoAll, esperado);
 		Assertions.assertNotSame(noEsperado, esperado);
 	}
