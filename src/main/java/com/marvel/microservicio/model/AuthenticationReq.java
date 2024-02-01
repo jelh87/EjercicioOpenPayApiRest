@@ -41,7 +41,7 @@ public class AuthenticationReq implements Serializable {
 	/**
 	 * @param username username
 	 */
-	public void setUsuario(String username) {
+	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
 

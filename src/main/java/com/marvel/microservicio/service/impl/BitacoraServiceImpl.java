@@ -3,7 +3,7 @@ package com.marvel.microservicio.service.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import com.marvel.microservicio.repository.BitacoraRepository;
 import com.marvel.microservicio.service.BitacoraService;
 
@@ -11,7 +11,7 @@ import com.marvel.microservicio.service.BitacoraService;
 /**
  * Clase que implementa la interfaz
  */
-@Component
+@Repository
 public class BitacoraServiceImpl implements BitacoraService{
 
 	/**
